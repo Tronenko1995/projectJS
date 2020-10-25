@@ -11,27 +11,16 @@ const personalMovieDB = {
 };
 
 /* Способ 1 */
-for (let i = 1; i < 3; i++) {
-    const a = prompt('Один из последних просмотренных фильмов', '');
-    if (a !== null && a !== '') {
-        if (a.length < 50) {
-            const b = prompt('На сколько оцените его?', '');
-            if (b !== null && b !== '')  {
-                personalMovieDB.movies[a] = b;
-            } else {
-                console.log('ответ в виде пустой строки запрещен');
-                i--;
-                continue;
-            }
-        } else {
-            console.log('нельзя вводить больше, чем 50 символов');
-            i--;
-            continue;
-        }
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов', ''),
+          b = prompt('На сколько оцените его?', '');
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('done');
     } else {
-        console.log('ответ в виде пустой строки запрещен');
+        console.log('error');
         i--;
-        continue;
     }
 }
 
